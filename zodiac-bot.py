@@ -113,8 +113,7 @@ class StreamListener(tweepy.StreamListener):
 
                     kata2 = description + '\n\n' + 'we post different messages per-day, see you  tomorrow. :)'
 
-                    if len(kata2) > 280:
-                        origin
+                    
                     
                                    
                     time.sleep(10)
@@ -158,6 +157,25 @@ class StreamListener(tweepy.StreamListener):
             
         #jika jumlah tweet yang di reply > 5
         else:
+             #get zodiac features
+            horoscope = pyaztro.Aztro(sign=zodiac)
+            username = status.user.screen_name
+            mood = horoscope.mood
+            luckytime = horoscope.lucky_time
+            description = horoscope.description
+            color = horoscope.color
+            jodoh = horoscope.compatibility
+            luckynumber = horoscope.lucky_number
+
+
+            kata2 = description + '\n\n' + 'we post different messages per-day, see you  tomorrow. :)'
+
+                    
+                    
+                                   
+            time.sleep(10)
+            api.update_status("@" + status.user.screen_name + " " + kata2, in_reply_to_status_id=status.id)
+            
             print('Max num reached = ' +
                               str(StreamListener.tweet_counter))
             StreamListener.tweet_counter = 0
