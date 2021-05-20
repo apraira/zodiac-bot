@@ -85,7 +85,8 @@ class StreamListener(tweepy.StreamListener):
                                   ": " + status.text + " ( skipped )")
                     
                 elif zodiac not in horoskop: 
-                    
+                    time.sleep(10)
+                    api.update_status("@" + status.user.screen_name + " " + 'hi, please do check our format (on pinned) correctly' , in_reply_to_status_id=status.id)
                     print("> (wrong format)" + status.user.screen_name +
                                   ": " + status.text + " ( skipped )")
 
