@@ -31,7 +31,7 @@ class StreamListener(tweepy.StreamListener):
     
     def on_status(self, status):
         # Static variable
-        maks = 6
+        maks = 10
         
         
         
@@ -153,8 +153,8 @@ class StreamListener(tweepy.StreamListener):
             print('Max num reached = ' +
                               str(StreamListener.tweet_counter))
             StreamListener.tweet_counter = 0
-            print('Istirahat 3 Menit')
-            time.sleep(60*3)
+            print('Istirahat 5 Menit')
+            time.sleep(60*5)
             print ("starting prediction again")
             
         
