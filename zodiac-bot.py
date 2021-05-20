@@ -27,12 +27,12 @@ class StreamListener(tweepy.StreamListener):
     nkata = 0
     total_predict = 0
     
-    print('starting prediction')
+    
     
     def on_status(self, status):
         # Static variable
         maks = 10
-        
+        print('starting prediction')
         
         
         #Dynamic Variabel
@@ -53,6 +53,8 @@ class StreamListener(tweepy.StreamListener):
         #horoscope
         zodiac = status.text
         zodiac = zodiac.lower()
+        zodiac = zodiac.replace(".","")
+        zodiac = zodiac.replace(",","")
         zodiac = zodiac.split()
         zodiac = zodiac[1]
         
@@ -189,3 +191,4 @@ while True:
         print (e)
         time.sleep(1)  # to avoid craziness with Twitter
         continue
+
