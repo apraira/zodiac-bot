@@ -56,7 +56,7 @@ class StreamListener(tweepy.StreamListener):
         zodiac = zodiac.split()
         zodiac = zodiac[1]
         
-        horoscope = pyaztro.Aztro(sign=zodiac)
+        
         horoskop = ['aries', 'taurus', 'gemini', 'cancer', 'leo', 'virgo', 'libra', 'scorpio', 'sagittarius', 'capricorn', 'aquarius', 'pisces' ]
         #list kata0
         
@@ -97,6 +97,7 @@ class StreamListener(tweepy.StreamListener):
 
                 else:
                     #get zodiac features
+                    horoscope = pyaztro.Aztro(sign=zodiac)
                     username = status.user.screen_name
                     mood = horoscope.mood
                     luckytime = horoscope.lucky_time
