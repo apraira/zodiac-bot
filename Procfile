@@ -1,0 +1,1 @@
+worker: python zodiac-bot.py
