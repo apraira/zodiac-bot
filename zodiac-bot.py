@@ -83,6 +83,7 @@ class StreamListener(tweepy.StreamListener):
                     
                     print("> (is replyied)" + status.user.screen_name +
                                   ": " + status.text + " ( skipped )")
+                
                     
                 elif zodiac not in horoskop: 
                     time.sleep(10)
@@ -110,7 +111,7 @@ class StreamListener(tweepy.StreamListener):
                     luckynumber = horoscope.lucky_number
 
 
-                    kata2 = 'Hello, ' + username + "!" + '\n\n' + description + '\n\n' + 'we post different messages per-day, see you  tomorrow. :)'
+                    kata2 = description + '\n\n' + 'we post different messages per-day, see you  tomorrow. :)'
                     
                                    
                     time.sleep(10)
