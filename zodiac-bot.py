@@ -111,13 +111,20 @@ class StreamListener(tweepy.StreamListener):
                     luckynumber = horoscope.lucky_number
 
 
-                    kata2 = description + '\n\n' + 'we post different messages per-day, see you  tomorrow. :)'
+                    kata2 = 'Hello ' + username + "! here's your horoscope daily!" + '\n' + '\n' + "Today's mood: " + mood + '\nYour lucky number: ' + str(luckynumber) + '\n' + 'Color of the day: ' + color + '\nPerfect companion: ' + jodoh
+                    kata3 = '\nSpecial Message: ' + '\n' + description
+                    kata4 = 'We post different messages each day! see you tomorrow ' + username + ' :)'
 
-                    
-                    
-                                   
+                            
+                            
+                                        
                     time.sleep(10)
-                    api.update_status("@" + status.user.screen_name + " " + kata2, in_reply_to_status_id=status.id)
+                    original_tweet = api.update_status("@" + status.user.screen_name + " " + kata2, in_reply_to_status_id=status.id)
+                    second_tweet = api.update_status("@" + status.user.screen_name + " " + kata3, in_reply_to_status_id=original_tweet.id, 
+                                        auto_populate_reply_metadata=True)
+                    third_tweet = api.update_status("@" + status.user.screen_name + " " + kata4, in_reply_to_status_id=second_tweet.id, 
+                                        auto_populate_reply_metadata=True)
+
 
 
                     StreamListener.tweet_counter += 1
@@ -168,14 +175,20 @@ class StreamListener(tweepy.StreamListener):
             luckynumber = horoscope.lucky_number
 
 
-            kata2 = description + '\n\n' + 'we post different messages per-day, see you  tomorrow. :)'
+            kata2 = 'Hello ' + username + "! here's your horoscope daily!" + '\n' + '\n' + "Today's mood: " + mood + '\nYour lucky number: ' + str(luckynumber) + '\n' + 'Color of the day: ' + color + '\nPerfect companion: ' + jodoh
+            kata3 = '\nSpecial Message: ' + '\n' + description
+            kata4 = 'We post different messages each day! see you tomorrow ' + username + ' :)'
 
                     
                     
                                    
             time.sleep(10)
-            api.update_status("@" + status.user.screen_name + " " + kata2, in_reply_to_status_id=status.id)
-            
+            original_tweet = api.update_status("@" + status.user.screen_name + " " + kata2, in_reply_to_status_id=status.id)
+            second_tweet = api.update_status("@" + status.user.screen_name + " " + kata3, in_reply_to_status_id=original_tweet.id, 
+                                 auto_populate_reply_metadata=True)
+            third_tweet = api.update_status("@" + status.user.screen_name + " " + kata4, in_reply_to_status_id=second_tweet.id, 
+                                 auto_populate_reply_metadata=True)
+
             print('Max num reached = ' +
                               str(StreamListener.tweet_counter))
             StreamListener.tweet_counter = 0
