@@ -112,6 +112,9 @@ class StreamListener(tweepy.StreamListener):
 
 
                     kata2 = description + '\n\n' + 'we post different messages per-day, see you  tomorrow. :)'
+
+                    if len(kata2) > 280:
+                        origin
                     
                                    
                     time.sleep(10)
@@ -158,8 +161,8 @@ class StreamListener(tweepy.StreamListener):
             print('Max num reached = ' +
                               str(StreamListener.tweet_counter))
             StreamListener.tweet_counter = 0
-            print('Istirahat 5 Menit')
-            time.sleep(60*5)
+            print('Istirahat 1 Menit')
+            time.sleep(60*1)
             print ("starting prediction again")
             
         
