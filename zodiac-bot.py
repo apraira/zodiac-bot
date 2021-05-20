@@ -109,7 +109,7 @@ class StreamListener(tweepy.StreamListener):
                     luckynumber = horoscope.lucky_number
 
 
-                    kata2 = 'Hello, ' + username + "!" + '\n\n' + description
+                    kata2 = 'Hello, ' + username + "!" + '\n\n' + description + '\n\n' + 'we post different messages per-day, see you  tomorrow. :)'
                     
                                    
                     time.sleep(10)
