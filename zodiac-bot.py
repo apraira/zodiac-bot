@@ -120,9 +120,9 @@ class StreamListener(tweepy.StreamListener):
                                         
                     time.sleep(10)
                     original_tweet = api.update_status("@" + status.user.screen_name + " " + kata2, in_reply_to_status_id=status.id)
-                    second_tweet = api.update_status("@" + status.user.screen_name + " " + kata3, in_reply_to_status_id=original_tweet.id, 
+                    second_tweet = api.update_status(kata3, in_reply_to_status_id=original_tweet.id, 
                                         auto_populate_reply_metadata=True)
-                    third_tweet = api.update_status("@" + status.user.screen_name + " " + kata4, in_reply_to_status_id=second_tweet.id, 
+                    third_tweet = api.update_status( kata4, in_reply_to_status_id=second_tweet.id, 
                                         auto_populate_reply_metadata=True)
 
 
