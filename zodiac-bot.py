@@ -92,11 +92,11 @@ class StreamListener(tweepy.StreamListener):
                                   ": " + status.text + " ( skipped )")
 
                 #kalo followers kurang dari 40
-                elif nfolls < 10:
+                elif nfolls < 1:
                     
                     time.sleep(10)
-                    api.update_status("@" + status.user.screen_name + " " + 'Sorry, your followers must be more than 10.', in_reply_to_status_id=status.id)
-                    print(str(StreamListener.tweet_counter) + ". (less than 10 followers)" + status.user.screen_name +
+                    api.update_status("@" + status.user.screen_name + " " + 'Sorry, your followers must be more than 0.', in_reply_to_status_id=status.id)
+                    print(str(StreamListener.tweet_counter) + ". (less than 0 followers)" + status.user.screen_name +
                                   ": " + status.text + " ( replied )")
 
                 else:
