@@ -21,6 +21,7 @@ auth.set_access_token(ACCESS_TOKEN, ACCESS_TOKEN_SECRET)
 
 # Create API object
 api = tweepy.API(auth, wait_on_rate_limit=True, wait_on_rate_limit_notify=True)
+print("connected ti Twitter")
 
 class StreamListener(tweepy.StreamListener):
     tweet_counter = 0
